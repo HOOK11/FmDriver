@@ -1,0 +1,26 @@
+#include<Windows.h>
+
+EXTERN_C BOOLEAN WINAPI Fm_InitComm();
+
+EXTERN_C BOOLEAN WINAPI Fm_DriverLoad();
+
+EXTERN_C ULONG64 WINAPI Fm_GetModule(ULONG64 Pid, char* ModuleName);
+
+EXTERN_C ULONG64 WINAPI Fm_GetExeModule(ULONG64 PID);
+
+EXTERN_C BOOLEAN WINAPI Fm_ReadMemory(ULONG64 Pid, ULONG64 Address, PVOID Buffer, ULONG64 Size);
+
+EXTERN_C BOOLEAN WINAPI Fm_WriteMemory(ULONG64 Pid, ULONG64 Address, PVOID Buffer, ULONG64 Size);
+
+EXTERN_C BOOLEAN WINAPI Fm_Inject(ULONG64 pid, unsigned char* DllData, SIZE_T dwImageSize);
+
+EXTERN_C BOOLEAN WINAPI Fm_FakeProcess(ULONG64 MyPid, ULONG64 fakepid);
+
+EXTERN_C BOOLEAN WINAPI Fm_WindowProtect(ULONG64 Hwnd);
+
+EXTERN_C ULONG64 WINAPI Fm_AllocMemory(SIZE_T Size);
+
+
+//Î´ÐÞ¸´
+EXTERN_C ULONG64 WINAPI Fm_InitDecryptFunc(ULONG64 PID, ULONG64 FuncAddress, PUCHAR CodeBuffer);
+
